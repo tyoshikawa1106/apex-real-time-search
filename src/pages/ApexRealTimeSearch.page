@@ -1,0 +1,24 @@
+<apex:page controller="ApexRealTimeSearchController" docType="html-5.0" showHeader="true" sidebar="false" tabStyle="ApexClass" id="page">
+    <!-- jQuery -->
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'dist/jquery.min.js')}" />
+    <!-- font family -->
+    <apex:stylesheet value="{!$Resource.CommonFontFamily}" />
+    <!-- css -->
+    <apex:include pageName="ApexRealTimeSearchCss" />
+    
+    <!-- main -->
+    <div id="vf-page">
+        <apex:form id="form">
+            <div class="searchBar">
+                <apex:input type="text" value="{!searchBar}" styleClass="searchBarInput" html-placeholder="Apex Class Search..."
+                                                            html-maxlength="40" onkeyup="return realTimeSearch();" id="searchBarInput" />
+            </div>
+            <div class="resultsList">
+                <ul id="ul-records"></ul>
+            </div>
+        </apex:form>
+    </div>
+    
+    <!-- javascript -->
+    <apex:include pageName="ApexRealTimeSearchScript" />
+</apex:page>
